@@ -3,7 +3,6 @@
   include('database.php');
 
 if(isset($_POST['name'])) {
-  # echo $_POST['name'] . ', ' . $_POST['description'];
   $contact_name = $_POST['name'];
   $contact_surname = $_POST['surname'];
   $contact_adress = $_POST['adress'];

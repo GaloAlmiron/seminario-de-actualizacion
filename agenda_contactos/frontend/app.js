@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Testing
   console.log('JavaScript is working!');
   fetchContacts();
-  document.getElementById('contact-result').style.display = 'none';
+  //document.getElementById('contact-result').style.display = 'none';
 
   
   document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -16,6 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let adress = document.getElementById('adress').value;
     let tel = document.getElementById('tel').value;
     let id = document.getElementById('contactId').value;
+
+    // Validar campos
+    if (!validateNotEmpty(name, surname, email, adress, tel)) {
+      return;
+    }
+
+    // Validar correo electrónico
+    if (!validateEmail(email)) {
+      return;
+    }
+
+    // Validar longitud del teléfono
+    if (!validatePhoneLength(tel)) {
+      return;
+    }
+
     let postData = 'name=' + encodeURIComponent(name) + '&surname=' + encodeURIComponent(surname)  + '&adress=' + encodeURIComponent(adress) + '&email=' + encodeURIComponent(email) + '&tel=' + encodeURIComponent(tel) + '&id=' + encodeURIComponent(id);
     let url = edit === false ? '../backend/contact-add.php' : '../backend/contact-edit.php';
     let xhr = new XMLHttpRequest();
@@ -45,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let contacts = JSON.parse(xhr.responseText);
         let template = '';
         contacts.forEach(contact => {
-          template += '<tr contactId="' + contact.id + '"><td>' + contact.id + '</td><td><a href="#" class="contact-item">' + contact.name + '</a></td><td>' +  contact.surname + '</a></td><td>' + contact.adress + '</a></td><td>' + contact.email + '</a></td><td>' + contact.tel + '</td><td><button class="contact-delete btn btn-danger">Delete</button></td>' + '</td><td><button class="contact-edit btn btn-success">Edit</button></td></tr>' ;
+          template += '<tr contactId="' + contact.id + '"><td>' + contact.id + '</td><td><a href="#" class="contact-item">' + contact.name + '</a></td><td>' +  contact.surname + '</a></td><td>' + contact.adress + '</a></td><td>' + contact.email + '</a></td><td>' + contact.tel + '</td><td><button id="delete">Delete</button></td>' + '</td><td><button id="edit">Edit</button></td></tr>' ;
           
         });
         document.getElementById('contacts').innerHTML = template;
@@ -114,7 +130,35 @@ document.addEventListener('click', function(e) {
     e.preventDefault();
   }
 });
-
-
-
 });
+
+
+  // Función para validar que los campos no estén vacíos
+  function validateNotEmpty(...fields) {
+    for (let field of fields) {
+      if (field.trim() === '') {
+        alert('Por favor, complete todos los campos.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Función para validar el formato de correo electrónico
+  function validateEmail(email) {
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Por favor, ingrese un correo electrónico válido.');
+      return false;
+    }
+    return true;
+  }
+
+  // Función para validar la longitud del teléfono
+  function validatePhoneLength(tel) {
+    if (tel.length > 11) {
+      alert('La longitud del teléfono no puede ser superior a 11 caracteres.');
+      return false;
+    }
+    return true;
+  }
