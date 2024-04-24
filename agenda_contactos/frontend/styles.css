@@ -1,0 +1,77 @@
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Estilos para el formulario de agregar contactos */
+#contact-form {
+  margin-bottom: 20px;
+}
+
+#contact-form .form-group {
+  margin-bottom: 10px;
+}
+
+/* Estilos para la tabla de contactos */
+.table {
+  background-color: #fff;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+/* Estilos para los botones */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+/* Estilos para centrar el contenido */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Estilos para posicionar el contenedor a la izquierda de la tabla */
+.card.my-4 {
+  display: inline-block;
+  vertical-align: top;
+}
