@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('password').style.borderColor = '';
 
 
-        if (passOk === true){
             const xhr = new XMLHttpRequest();
             xhr.open('POST', '../backend/create_user.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -50,10 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
             xhr.send(`username=${username}&password=${password}&group=${group}`);
-    }else {
-        alert('Error al registrar el usuario: ' + response.message);}
-
-});
+    });
 });
 
 
