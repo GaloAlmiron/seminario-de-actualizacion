@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Control de accesos</title>
+</head>
+<body>
+    <h1>Control de permisos</h1>
+    <h2>Usuarios</h2>
+    <h3>Agregar Usuario</h2>
+        <form id="addUserForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <label for="group">Grupo:</label>
+            <select id="group" name="group">
+                <!-- Los grupos se llenarán dinámicamente -->
+            </select>
+            <br>
+            <button type="submit">Agregar Usuario</button>
+        </form>
+    <div id="users"></div>
+    <h2>Grupos</h2>
+    <div id="groups"></div>
+    <h2>Acciones</h2>
+    <div id="actions"></div>
+</body>
+<script src="action.js"></script>
+<script src="group.js"></script>
+<script src="user.js"></script>
+</html>

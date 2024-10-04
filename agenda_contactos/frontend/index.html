@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Agenda de contactos</title>
+
+     <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <h1>AGENDA DE CONTACTOS</h1>
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+              <!-- FORM TO ADD contactS -->
+              <form id="contact-form">
+                <div class="form-group">
+                  <input type="text" id="name" placeholder="Nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="surname" class="form-control" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="adress" class="form-control" placeholder="Dirección">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="tel" class="form-control" placeholder="Telefono">
+                </div>
+                <input type="hidden" id="contactId">
+                <button type="submit" class="btn btn-primary btn-block text-center" id="addContact">
+                  Agregar contacto 
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- TABLE  -->
+        <div >
+          <!--<div class="card my-4" id="contact-result"></div> -->
+          <table >
+            <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+                <td>Email</td>
+                <td>Teléfono</td>
+              </tr>
+            </thead>
+            <tbody id="contacts"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frontend Logic -->
+    <script src="app.js"></script>
+  </body>
+
+</html>

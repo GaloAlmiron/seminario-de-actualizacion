@@ -1,0 +1,66 @@
+body {
+  background-color: #F5F5F5;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  color: #333333;
+  text-align: center;
+}
+form {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 0px 0px 10px #AAAAAA;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333333;
+  font-weight: bold;
+}
+input[type="text"], input[type="date"] {
+  padding: 10px;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+#addContact{
+  background-color: #0070C0;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#delete{
+  background-color: #fe0000;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#edit{
+  background-color: #139032;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+table {
+  color: #333333;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 0px 0px 10px #AAAAAA;
+}
